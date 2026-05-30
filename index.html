@@ -141,7 +141,7 @@
 
   <h2>1. Who We Are</h2>
   <p>
-    Inkventory is an independent mobile application for Android and iOS developed by an individual developer.
+    Inkventory is an independent mobile application for Android developed by an individual developer.
     If you have questions about this policy, contact us at
     <a href="mailto:0gpdev0@gmail.com">0gpdev0@gmail.com</a>.
   </p>
@@ -156,7 +156,7 @@
     <p style="margin:0">
       Pen names, brands, models, nib sizes, photos, and notes; ink names, brands, color values, property tags (shading, sheen, shimmer), level indicators, and notes; ink change timestamps and history; rotation reminder settings.
       <br><br>
-      All of this is stored on your device using AsyncStorage (unencrypted local storage). It never leaves your device unless you explicitly sign in and enable cloud sync. Authentication session tokens are stored separately in the device's secure keychain (iOS) or Keystore (Android).
+      All of this is stored on your device using AsyncStorage (unencrypted local storage). It never leaves your device unless you explicitly sign in and enable cloud sync. Authentication session tokens are stored separately in the device's secure Keystore via expo-secure-store.
     </p>
   </div>
 
@@ -198,7 +198,7 @@
       <span class="badge badge-third">third-party</span>
     </div>
     <p style="margin:0">
-      If you purchase Inkventory Premium, payments are processed by Apple (App Store) or Google (Google Play). We use <strong>RevenueCat</strong> to manage subscription status. RevenueCat receives your anonymous app user ID and purchase receipt. We do not receive or store your payment card details. See the <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a>.
+      If you purchase Inkventory Premium, payments are processed by Google (Google Play). We use <strong>RevenueCat</strong> to manage subscription status. RevenueCat receives your anonymous app user ID and purchase receipt. We do not receive or store your payment card details. See the <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a>.
     </p>
   </div>
 
@@ -219,7 +219,7 @@
     <li>We do not build profiles for targeted advertising.</li>
     <li>We do not share your personal data with third parties except as described in Section 4.</li>
     <li>We do not access your contacts, location, microphone, or any sensor not listed in Section 2.</li>
-    <li>We do not use Google Sign-In, Apple Sign-In, Facebook Login, or any social authentication. Sign-in is by email only (one-time code).</li>
+    <li>We do not use Google Sign-In, Facebook Login, or any social authentication. Sign-in is by email only (one-time code).</li>
   </ul>
 
   <h2>4. Third-Party Services</h2>
@@ -238,15 +238,14 @@
       <a href="https://posthog.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
     </li>
     <li>
-      <strong>Apple App Store / Google Play</strong> - payment processing for in-app purchases.
-      Apple: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a> &nbsp;&middot;&nbsp;
-      Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+      <strong>Google Play</strong> - payment processing for in-app purchases.
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
     </li>
   </ul>
 
   <h2>5. Data Storage and Security</h2>
   <p>
-    Local collection data (pens, inks, history) is stored using AsyncStorage, which is standard unencrypted local storage on Android and iOS. Authentication session tokens are stored in the device's secure keychain (iOS) or Android Keystore via expo-secure-store.
+    Local collection data (pens, inks, history) is stored using AsyncStorage, which is standard unencrypted local storage on Android. Authentication session tokens are stored in the device's secure Keystore via expo-secure-store.
   </p>
   <p>
     Cloud data is stored in Supabase's infrastructure in the EU (eu-west-1 region) with Row Level Security enabled. This means every database query is enforced at the row level so no user can access another user's data. Data in transit is encrypted using TLS.
